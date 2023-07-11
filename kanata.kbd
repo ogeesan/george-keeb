@@ -1,0 +1,87 @@
+(defcfg
+    ;; This allows keys that aren't in defsrc to be emitted
+    process-unmapped-keys no
+    ;; Reduces some overhead if set to no
+    log-layer-changes yes
+)
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet cmp  rctl
+)
+
+;; Default layout aliases
+(defalias
+;; 	;;spc (tap-next-release spc (layer-toggle num))
+;; 	;;esc (tap-next-release esc (layer-toggle vi))
+	nav (layer-while-held quicknav)
+	alt (tap-dance 250 (ralt esc))
+
+  snv (tap-hold-release 200 200 s (layer-toggle arrows))
+  fmc (tap-hold-release 200 200 f (layer-toggle misc))
+
+)
+(deflayer qwerty
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @nav a    @snv d    @fmc g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            @alt rmet cmp  rctl
+)
+
+
+;; quick navigation layers
+(defalias
+    cbs (multi lctl bspc)
+    crt (multi lctl rght)
+    clt (multi lctl left)
+    cup (multi lctl up)
+    cdn (multi lctl down)
+    uds (multi lsft -)
+    hnv (layer-while-held hypernav)
+    pup pgup
+    pdn pgdn
+    hme home
+    end end
+    tld (multi lsft grv)
+    go (multi lctl ;)
+)
+(deflayer quicknav
+  caps f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _
+  _    _    _    @cup _    _    _    @hme up   @end @uds @pup _    _
+  _    _    @clt @cdn @crt @go  bspc left down rght +    @pdn _   
+  _    _    @tld grv  _    _    @cbs del  _    _    _    _   
+  _    _    _              ctl            _    _    _    _   
+)
+(deflayer hypernav
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    @cup _    _    _    _    _
+  _    _    _    _    _    _    @cbs @clt @cdn @crt _    _    _   
+  _    _    _    _    _    _    _    _    _    _    _    _   
+  _    _    _              _              _    _    _    _   
+)
+(deflayer arrows
+  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _
+  _    _    _    _    _    _    C-S-tab pgup up pgdn C-tab _  _    _
+  _    _    _    _    _    _    home left down rght end  _    _
+  _    _    _    _    _    _    _    _    C-w  _    _    _
+  _    _    _              ctl            _    _    _    _
+)
+(deflayer misc
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    ins  S-[  S-]  [    ]    _    _    _
+  _    _    _    _    C-u  _    @cbs bspc esc  ret  _    _    _
+  _    C-z  C-x  C-c  C-v  _    _    del  _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+;; (deflayer template
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _              _              _    _    _    _
+;; )
