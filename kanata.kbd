@@ -51,8 +51,8 @@
 )
 (deflayer quicknav
   caps f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _
-  _    _    _    @cup _    _    _    @hme up   @end @uds @pup _    _
-  _    _    @clt @cdn @crt @go  bspc left down rght +    @pdn _   
+  _    _    _    @cup _    _    _    -    up   +    @hme @pup _    _
+  _    _    @clt @cdn @crt @go  bspc left down rght @end @pdn _   
   _    _    @tld grv  _    _    @cbs del  _    _    _    _   
   _    _    _              ctl            _    _    _    _   
 )
