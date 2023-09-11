@@ -23,13 +23,14 @@
 	sym (tap-hold-release 200 200 s (layer-while-held symbols))
 	smi (layer-while-held symbolsinvert)
 	shr (tap-hold-release 200 200 j (layer-while-held shortcuts))
+	lnr (tap-hold-release 200 200 / (layer-while-held launcher))
 
 )
 (deflayer qwerty
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   lrld a    @sym @npd @hnv g    h    @shr k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lsft z    x    c    v    b    n    m    ,    .    @lnr rsft
   lctl lmet lalt           spc            @alt rmet cmp  rctl
 )
 
@@ -101,6 +102,19 @@
   _    _    _              _              _    _    _    _
 )
 
+(defalias
+	lnb (multi lctrl lshift lalt b)
+	lnn (multi lctrl lshift lalt n)
+	lnp (multi lctrl lshift lalt p)
+)
+
+(deflayer launcher
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    @lnp _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    @lnb @lnn _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
 
 ;; ----- Old layers that aren't used anymore -----
 (deflayer quicknav
