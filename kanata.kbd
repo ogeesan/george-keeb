@@ -16,18 +16,19 @@
 ;; Default layout aliases
 (defalias
 ;; 	;;spc (tap-next-release spc (layer-toggle num))
-;; 	;;esc (tap-next-release esc (layer-toggle vi))
-	nav (layer-while-held quicknav)
-	alt (tap-dance 250 (ralt esc))
-
-  snv (tap-hold-release 200 200 s (layer-toggle arrows))
-  fmc (tap-hold-release 200 200 f (layer-toggle misc))
+	nav (layer-while-held quicknav) ;; my highly used shortcut
+	alt (tap-dance 250 (ralt esc))  ;; double-tap alt to esc
+	hnv (tap-hold-release 200 200 f (layer-while-held hypernav))
+	npd (tap-hold-release 200 200 d (layer-while-held numpad))
+	sym (tap-hold-release 200 200 s (layer-while-held symbols))
+	smi (layer-while-held symbolsinvert)
+	shr (tap-hold-release 200 200 j (layer-while-held shortcuts))
 
 )
 (deflayer qwerty
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @nav a    @snv d    @fmc g    h    j    k    l    ;    '    ret
+  lrld a    @sym @npd @hnv g    h    @shr k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            @alt rmet cmp  rctl
 )
@@ -41,7 +42,6 @@
     cup (multi lctl up)
     cdn (multi lctl down)
     uds (multi lsft -)
-    hnv (layer-while-held hypernav)
     pup pgup
     pdn pgdn
     hme home
@@ -50,6 +50,59 @@
     go (multi lctl ;)
     lyr (layer-switch layers)
 )
+;; reference for where eacn letter falls on layout
+;;caps a    s    d    f    g    h    j    k    l    ;    '    ret
+(deflayer hypernav
+  caps f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  @lyr
+  _    _    _    esc  _    _    _    -    up   =    @hme @pup _    _
+  _    _    lsft ctl  _    @go  bspc left down rght @end @pdn _   
+  _    _    @tld grv  _    _    @cbs del  _    _    _    _   
+  _    _    _              @uds           _    _    _    _   
+)
+
+(deflayer numpad
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    kp/  kp7  kp8  kp9  kp-  _    _    _
+  _    _    _    _    _    _    kp*  kp4  kp5  kp6  kp+  _    _
+  _    _    _    _    _    _    kp0  kp1  kp2  kp3  _    _
+  _    _    _              _              _    _    _    _
+)
+
+;; symbols later will allow "Ctrl" to flip the braces
+(deflayer symbols
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    S-1  S-2  S-3  S-4  _    _    _
+  _    _    _    @smi _    _    @tld S-9  [    S-[  `    _    _
+  _    _    _    _    _    _    _    S-5  S-6  S-7  S-8  _
+  _    _    _              _              _    _    _    _
+)
+(deflayer symbolsinvert
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    S-0  ]    S-}  _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+;; Layer for commonly used shortcuts between editors
+(defalias
+	rcl (multi lsft lctl lalt r) ;; run cell
+	trm (multi lsft lctl lalt t) ;; focus on terminal
+	edt (multi lsft lctl lalt e) ;; focus on editor
+	acj (multi lsft lctl lalt g) ;; acejump/metago
+	rsl (multi lctrl lalt ret) ;; run selection
+)
+
+(deflayer shortcuts
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    @edt @trm @acj @rcl @rsl _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+
+;; ----- Old layers that aren't used anymore -----
 (deflayer quicknav
   caps f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  @lyr
   _    _    _    @cup _    _    _    @uds up   =    @hme @pup _    _
@@ -57,6 +110,7 @@
   _    _    @tld grv  _    _    @cbs del  _    _    _    _   
   _    _    _              ctl            _    _    _    _   
 )
+
 (deflayer layers
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    (layer-switch qwerty) (layer-switch gaming) _    _    _    _    _    _    _    _    _    _    _
@@ -71,13 +125,7 @@
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet cmp  rctl
 )
-(deflayer hypernav
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    @cup _    _    _    _    _
-  _    _    _    _    _    _    @cbs @clt @cdn @crt _    _    _   
-  _    _    _    _    _    _    _    _    _    _    _    _   
-  _    _    _              _              _    _    _    _   
-)
+
 (deflayer arrows
   _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _
   _    _    _    _    _    _    C-S-tab pgup up pgdn C-tab _  _    _
@@ -93,10 +141,10 @@
   _    _    _              _              _    _    _    _
 )
 
-;; (deflayer template
-;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-;;   _    _    _    _    _    _    _    _    _    _    _    _    _
-;;   _    _    _    _    _    _    _    _    _    _    _    _
-;;   _    _    _              _              _    _    _    _
-;; )
+(deflayer template
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
