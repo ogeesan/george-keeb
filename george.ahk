@@ -20,14 +20,17 @@ OpenProgram(program_exe, program_path:="") {
     }
 
     ; Create or add to a window group for the program
-    GroupAdd, %program_class%Group, ahk_class %program_class%
+    GroupAdd, %group_name%Group, ahk_exe %program_exe%
 
-    ; If the foremost window belongs to the program, activate the next window in the group
-	
-    if WinActive("ahk_class " . program_class)
-        GroupActivate, %program_class%Group, r
+    if WinActive("ahk_exe " . program_exe)
+    {
+        GroupActivate, %group_name%Group, r
+    }
     else
-        WinActivate, ahk_class %program_class%
+    {
+        ; If none of the windows are foremost, activate the first one in the group
+        GroupActivate, %group_name%Group
+    }
     return
 }
 
