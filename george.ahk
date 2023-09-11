@@ -35,8 +35,10 @@ OpenProgram(program_exe, program_path:="") {
 }
 
 ; Define shortcuts for individual programs
-^!+p::OpenProgram("pycharm64.exe", "C:\Program Files\JetBrains\PyCharm 2021.2\bin\pycharm64.exe")
-^!+n::OpenProgram("notepad++.exe", "C:\Program Files (x86)\Notepad++\notepad++.exe")
-^!+b::OpenProgram("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
-^!+f::OpenProgram("python.exe")
-^!+g::OpenProgram("GitHubDesktop.exe", "C:\Users\stuge\AppData\Local\GitHubDesktop\GitHubDesktop.exe")
+; Assuming I only need 10 shortcuts this works at okay
+; Use of F13+ failed because AHK and Kanata don't play nice
+^!+1::OpenProgram("pycharm64.exe", "C:\Program Files\JetBrains\PyCharm 2021.2\bin\pycharm64.exe")
+^!+2::OpenProgram("notepad++.exe", "C:\Program Files (x86)\Notepad++\notepad++.exe")
+^!+3::OpenProgram("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
+^!+4::OpenProgram("python.exe")
+^!+5::OpenProgram("GitHubDesktop.exe", "C:\Users\stuge\AppData\Local\GitHubDesktop\GitHubDesktop.exe")

@@ -103,11 +103,12 @@
 )
 
 (defalias
-	lnb (multi lctrl lshift lalt b)
-	lnn (multi lctrl lshift lalt n)
-	lnp (multi lctrl lshift lalt p)
-	lnf (multi lctrl lshift lalt f)
-	lng (multi lctrl lshift lalt g)
+	;; can't use f13 here because kanata and ahk don't play well together for them
+	lnb (multi lctrl lshift lalt 3) ;;
+	lnn (multi lctrl lshift lalt 2) ;; open Notepad++
+	lnp (multi lctrl lshift lalt 1) ;; open PyCharm
+	lnf (multi lctrl lshift lalt 4)
+	lng (multi lctrl lshift lalt 5)
 )
 
 (deflayer launcher
