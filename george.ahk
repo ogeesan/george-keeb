@@ -39,3 +39,4 @@ OpenProgram(program_exe, program_path:="") {
 ^!+n::OpenProgram("notepad++.exe", "C:\Program Files (x86)\Notepad++\notepad++.exe")
 ^!+b::OpenProgram("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
 ^!+f::OpenProgram("python.exe")
+^!+g::OpenProgram("GitHubDesktop.exe", "C:\Users\stuge\AppData\Local\GitHubDesktop\GitHubDesktop.exe")

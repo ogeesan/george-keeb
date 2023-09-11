@@ -107,12 +107,13 @@
 	lnn (multi lctrl lshift lalt n)
 	lnp (multi lctrl lshift lalt p)
 	lnf (multi lctrl lshift lalt f)
+	lng (multi lctrl lshift lalt g)
 )
 
 (deflayer launcher
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    @lnp _    _    _
-  _    _    _    _    @lnf _    _    _    _    _    _    _    _
+  _    _    _    _    @lnf @lng _    _    _    _    _    _    _
   _    _    _    _    _    @lnb @lnn _    _    _    _    _
   _    _    _              _              _    _    _    _
 )
