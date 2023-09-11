@@ -1,13 +1,22 @@
 ; Define the function to open or focus a program and cycle through its windows
-OpenProgram(program_name, program_class, program_path, titleMatchMode := 1) {
-	
-	; Set the title match mode if provided
-    SetTitleMatchMode, %titleMatchMode%
-	
+OpenProgram(program_exe, program_path:="") {
+    ; Convert .exe name to a valid group name by replacing the period with an underscore
+    group_name := StrReplace(program_exe, ".", "_")
+    group_name := StrReplace(group_name, "+", "_")
+
     ; Check if any window of the program exists
-    IfWinNotExist, ahk_class %program_class%
+    IfWinNotExist, ahk_exe %program_exe%
     {
-        Run, %program_path%
+        ; Only run the program if program_path is provided
+        if (program_path != "")
+        {
+            Run, %program_path%
+        }
+        else
+        {
+            ; Exit the function if no window exists and no program_path is provided
+            return
+        }
     }
 
     ; Create or add to a window group for the program
@@ -23,6 +32,7 @@ OpenProgram(program_name, program_class, program_path, titleMatchMode := 1) {
 }
 
 ; Define shortcuts for individual programs
-^!+p::OpenProgram("PyCharm", "SunAwtFrame", "C:\Program Files\JetBrains\PyCharm 2021.2\bin\pycharm64.exe")
-^!+n::OpenProgram("Notepad++", "Notepad", "C:\Program Files (x86)\Notepad++\notepad++.exe")
-^!+b::OpenProgram("Chrome", "Chrome_WidgetWin_1", "C:\Program Files\Google\Chrome\Application\chrome.exe", 2)
+^!+p::OpenProgram("pycharm64.exe", "C:\Program Files\JetBrains\PyCharm 2021.2\bin\pycharm64.exe")
+^!+n::OpenProgram("notepad++.exe", "C:\Program Files (x86)\Notepad++\notepad++.exe")
+^!+b::OpenProgram("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
+^!+f::OpenProgram("python.exe")
