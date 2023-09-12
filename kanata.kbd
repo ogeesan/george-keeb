@@ -22,7 +22,7 @@
 	npd (tap-hold-release 200 200 d (layer-while-held numpad))
 	sym (tap-hold-release 200 200 s (layer-while-held symbols))
 	smi (layer-while-held symbolsinvert)
-	shr (tap-hold-release 200 200 j (layer-while-held shortcuts))
+	shr (tap-hold-release 200 200 j (layer-while-held mehlayer))
 	lnr (tap-hold-release 200 200 / (layer-while-held launcher))
 
 )
@@ -85,21 +85,13 @@
   _    _    _              _              _    _    _    _
 )
 
-;; Layer for commonly used shortcuts between editors
-(defalias
-	rcl (multi lsft lctl lalt r) ;; run cell
-	trm (multi lsft lctl lalt t) ;; focus on terminal
-	edt (multi lsft lctl lalt e) ;; focus on editor
-	acj (multi lsft lctl lalt g) ;; acejump/metago
-	rsl (multi lctrl lalt ret) ;; run selection
-)
 
-(deflayer shortcuts
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    @edt @trm @acj @rcl @rsl _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
+(deflayer mehlayer ;; j isn'tactive because it is the activating key
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _   
+  _    S-C-A-q    S-C-A-w    S-C-A-e    S-C-A-r    S-C-A-t    S-C-A-y    S-C-A-u    S-C-A-i    S-C-A-o    S-C-A-p    _    _    _
+  _    S-C-A-a    S-C-A-s    S-C-A-d    S-C-A-f    S-C-A-g    S-C-A-h    _          S-C-A-k    S-C-A-l    S-C-A-;    _    _
+  _    S-C-A-z    S-C-A-x    S-C-A-c    S-C-A-v    S-C-A-b    S-C-A-n    S-C-A-m    S-C-A-,    S-C-A-.    S-C-A-/    _
+  _    _    _              _              _    _    _    _   
 )
 
 (defalias
