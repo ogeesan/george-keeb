@@ -34,7 +34,7 @@
   lrld a    @sym @npd @hnv g    @ctl j    k    l    @meh '    ret
   lsft z    x    c    v    b    n    @med ,    .    @lnr rsft
   lctl lmet lalt           spc            @alt rmet cmp  rctl
-              _    _    _     _    _    _    
+              lalt lctl ret      spc  lmet _    
 )
 
 
