@@ -68,8 +68,8 @@
 (deflayer numpad
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    kp/  kp7  kp8  kp9  kp-  _    _    _
-  _    _    _    _    _    _    kp*  kp4  kp5  kp6  kp+  _    _
-  _    _    _    _    _    _    kp0  kp1  kp2  kp3  _    _
+  _    _    .    _    bspc _    kp*  kp4  kp5  kp6  kp+  _    _
+  _    _    _    _    _    _    kp0  kp1  kp2  kp3  ret  _
   _    _    _              _              _    _    _    _
               _    _    _     _    _    _    
 )
