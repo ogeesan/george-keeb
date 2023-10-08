@@ -25,12 +25,13 @@
   med (tap-hold-release 200 150 m (layer-while-held media))
 	meh (tap-hold-release 200 150 ; (layer-while-held mehlayer))
 	lnr (tap-hold-release 200 150 / (layer-while-held launcher))
+  ctl (tap-hold-release 200 150 h lctl)
 
 )
 (deflayer qwerty
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  lrld a    @sym @npd @hnv g    h    j    k    l    @meh '    ret
+  lrld a    @sym @npd @hnv g    @ctl j    k    l    @meh '    ret
   lsft z    x    c    v    b    n    @med ,    .    @lnr rsft
   lctl lmet lalt           spc            @alt rmet cmp  rctl
               _    _    _     _    _    _    
