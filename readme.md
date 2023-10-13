@@ -1,10 +1,10 @@
 # George's kanata layout
 
-I find myself typing on different keyboards at home, at work, and on my laptop. The approach of using QMK to configure keyboards individually doesn't really make sense if I want to have a similar layout when writing on the laptop or on different keyboards. Similarly, well developed layout approaches like [Miryoku](https://github.com/manna-harbour/miryoku/) are highly reliant on thumb clusters and so aren't applicable to normal keyboards (kinda [^1]). I want something that a layout that is agnostic to the physical layout of the keyboard. I also type roll too much to make use of homerow mods.
+I find myself typing on different keyboards at home, at work, and on my laptop. The approach of using QMK to configure keyboards individually doesn't really make sense if I want to have a similar layout when writing on the laptop or on different keyboards. Similarly, well developed layout approaches like [Miryoku](https://github.com/manna-harbour/miryoku/) are highly reliant on thumb clusters and so aren't applicable to normal keyboards (kinda[^1]). I want something that a layout that is agnostic to the physical layout of the keyboard. I also type roll too much to make use of homerow mods.
 
 [^1]: I discovered that Miryoku features the [KMonad layout](https://github.com/manna-harbour/miryoku_kmonad) which aims to support full Miryoku on standard keyboards. The home row is moved up one layer, which is pretty cool. I've put a pin in that for now, since I've been enjoying building my own layout.
 
-Therefore, instead of using QMK to configure multiple keyboards I use [kanata](https://github.com/jtroo/kanata), a computer program which has similar functionality to QMK (support for layers, tap dance etc.), to remap inputs coming in from keystrokes (regardless of what sort of keyboard they're from). This also means that if I want to make changes to the keymap that they're quite easy to do from my device, whereas QMK requires the use of GitHub Actions to build the firmware.
+So instead of using ZMK to configure multiple keyboards I use [kanata](https://github.com/jtroo/kanata), a computer program which has similar functionality to QMK/ZMK (support for layers, tap dance etc.), to remap inputs on the computer itself. This also means that if I want to make changes to the keymap that they're quite easy to do from my device, whereas ZMK requires the use of GitHub Actions to build the firmware.
 
 ```mermaid
 flowchart LR
@@ -12,7 +12,7 @@ flowchart LR
 laptop(Laptop keyboard)
 kb1(Work keyboard)
 kb2(Home keyboard)
-kb3(Ergo-split keyboard\nMinimal QMK configuration)
+kb3(Ergo-split keyboard\nMinimal ZMK configuration)
 subgraph Computer
 kanata
 ahk(AutoHotKey)
@@ -94,10 +94,6 @@ The three systems I do most of my writing in are Notepad++, VS Code, and PyCharm
 
 [^1]: Macros plugin from ctf0
 [^2]: PyCharm Cell mode plugin
-
-
-| Move Line Down    |     |           |                           |         |
-| Move Line Up      |     |           |                           |         |
 
 ### Symbol and Number Layers
 I don't think there's much to say here, other than I take the normal keypad approach for numbers and the symbols are just squished onto a 4x3 grid.
