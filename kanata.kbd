@@ -6,13 +6,11 @@
 )
 
 (defsrc
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet cmp  rctl
-              f19  f20  f21   f22 f23  f24
-  f13  f14  f15                             f16  f17  f18
+  f13  tab  q    w    e    r    t    y    u    i    o    p    [    f16
+  f14  caps a    s    d    f    g    h    j    k    l    ;    '    f17
+  f15  lsft z    x    c    v    b    n    m    ,    .    /    rsft f18
+       lctl lmet lalt           spc            ralt rmet cmp  rctl
+                   f19  f20  f21   f22 f23  f24
 )
 
 ;; Default layout aliases
@@ -30,13 +28,11 @@
 
 )
 (deflayer qwerty
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  lrld a    @sym @npd @hnv g    @ctl j    k    l    @meh '    ret
-  lsft z    x    c    v    b    n    @med ,    .    @lnr rsft
-  lctl lmet lalt           spc            @alt rmet cmp  rctl
-              lalt lctl ret      spc  lmet _    
-  _    _    _                               _    _    _    
+  tab    tab  q    w    e    r    t    y    u    i    o    p    [    _
+  caps   lrld a    @sym @npd @hnv g    @ctl j    k    l    @meh '    '
+  lsft   lsft z    x    c    v    b    n    @med ,    .    @lnr rsft rsft
+       lctl lmet lalt           spc            @alt rmet cmp  rctl
+                lalt lctl ret      spc  lalt lmet    
 )
 
 
@@ -54,89 +50,85 @@
     end end
     tld (multi lsft grv)
     go (multi lctl ;)
-    lyr (layer-switch layers)
+    ;;lyr (layer-switch layers)
 )
 ;; reference for where eacn letter falls on layout
 ;;caps a    s    d    f    g    h    j    k    l    ;    '    ret
 (deflayer hypernav
-  caps f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _
-  _    _    _    esc  _    _    _    -    up   =    @hme @pup _    _
-  _    lalt lsft lctl _    @go  bspc left down rght @end @pdn _   
-  _    _    @tld grv  _    _    @cbs del  tab  _    _    _   
-  _    _    _              _            _    _    _    _   
+  _    _    _    _    esc  _    _    _    -    up   =    @hme @pup @pup
+  _    _    lalt lsft lctl _    @go  bspc left down rght @end @pdn @pdn
+  _    _    _    @tld grv  _    _    @cbs del  tab  _    _    _    _
+      _    _    _              _            _    _    _    _   
               _    _    _     _    _    _    
-  _    _    _                               _    _    _    
 )
 
+(defalias
+    kpd (tap-hold-release 200 150 g (layer-while-held numpadkeypad))
+)
 (deflayer numpad
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    kp/  kp7  kp8  kp9  kp-  _    _    _
-  _    ,    .    _    bspc _    kp*  kp4  kp5  kp6  kp+  _    _
-  _    _    _    _    _    _    kp0  kp1  kp2  kp3  ret  _
-  _    _    _              _              _    _    _    _
+  _    _    _    _    _    _    _    kp/  7    8    9    kp-  _    _
+  _    _    ,    .    _    bspc @kpd kp*  4    5    6    kp+  _    _
+  _    _    _    _    _    _    _    0    1    2    3    ret  _    _
+       _    _    _              _              _    _    _    _
               _    _    _     _    _    _    
-  _    _    _                               _    _    _    
+)
+
+(deflayer numpadkeypad
+  _    _    _    _    _    _    _    _    kp7  kp8  kp9  _    _    _
+  _    _    _    _    _    _    _    _    kp4  kp5  kp6  _    _    _
+  _    _    _    _    _    _    _    kp0  kp1  kp2  kp3  _    _    _
+       _    _    _              _              _    _    _    _
+              _    _    _     _    _    _    
 )
 
 (deflayer symbols
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    '    S-1  S-2  S-3  S-4  _    _    _
-  _    _    _    @smi _    _    @tld S-9  [    S-[  `    _    _
-  _    _    _    _    _    _    \    S-5  S-6  S-7  S-8  _
-  _    _    _              _              _    _    _    _
+  _    _    _    _    _    _    _    '    S-1  S-2  S-3  S-4  _    _
+  _    _    _    _    @smi _    _    @tld S-9  [    S-[  `    _    _
+  _    _    _    _    _    _    _    \    S-5  S-6  S-7  S-8  _    _
+       _    _    _              _              _    _    _    _
               _    _    _     _    _    _    
-  _    _    _                               _    _    _    
 )
 (deflayer symbolsinvert
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    S-'    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    S-0  ]    S-}  _    _    _
-  _    _    _    _    _    _    S-\  _    _    _    _    _
-  _    _    _              _              _    _    _    _
+  _    _    _    _    _    _    _    S-'  _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    S-0  ]    S-}  _    _    _
+  _    _    _    _    _    _    _    S-\  _    _    _    _    _    _
+       _    _    _              _              _    _    _    _
               _    _    _     _    _    _    
-  _    _    _                               _    _    _    
 )
 
 
 (deflayer mehlayer
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _   
-  _    S-C-A-q    S-C-A-w    S-C-A-e    S-C-A-r    S-C-A-t    S-C-A-y    S-C-A-u    S-C-A-i    S-C-A-o    S-C-A-p    _    _    _
-  _    S-C-A-a    S-C-A-s    S-C-A-d    S-C-A-f    S-C-A-g    S-C-A-h    S-C-A-j    S-C-A-k    S-C-A-l    S-C-A-;    _    _
-  _    S-C-A-z    S-C-A-x    S-C-A-c    S-C-A-v    S-C-A-b    S-C-A-n    S-C-A-m    S-C-A-,    S-C-A-.    S-C-A-/    _
-  _    _    _              _              _    _    _    _   
+  _    _    S-C-A-q    S-C-A-w    S-C-A-e    S-C-A-r    S-C-A-t    S-C-A-y    S-C-A-u    S-C-A-i    S-C-A-o    S-C-A-p    _    _
+  _    _    S-C-A-a    S-C-A-s    S-C-A-d    S-C-A-f    S-C-A-g    S-C-A-h    S-C-A-j    S-C-A-k    S-C-A-l    S-C-A-;    _    _
+  _    _    S-C-A-z    S-C-A-x    S-C-A-c    S-C-A-v    S-C-A-b    S-C-A-n    S-C-A-m    S-C-A-,    S-C-A-.    S-C-A-/    _    _
+      _    _    _              _              _    _    _    _   
               _    _    _     _    _    _    
-  _    _    _                               _    _    _    
 )
 
+
 (deflayer media
+  _    _ mute voldwn volu brup brdown _   _    _    _   prtsc _    _
+  _    _    _    prev pp   next _    _    _    lrld _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _ mute voldwn volu brup brdown _   _    _    _   prtsc _    _    _
-  _    _    prev pp   next _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
+       _    _    _              _              _    _    _    _
               _    _    _     _    _    _    
-  _    _    _                               _    _    _    
 )
 
 
 (deflayer lefthandlayer
+  _    _    _    _    up   _    _    _    _    _    _    _    _    _
+  _    _    _    left down rght _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    up   _    _    _    _    _    _    _    _    _    _
-  _    _    left down rght _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
+       _    _    _              _              _    _    _    _
               _    _    _     _    _    _    
-  _    _    _                               _    _    _    
 )
 
 (deflayer controllayer
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    C-f  _    _    _    _    _    _    _    _
-  _    C-z  C-x  C-c  C-v  _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
+  _    _    _    _    _    C-f  _    _    _    _    _    _    _    _
+  _    _    C-z  C-x  C-c  C-v  _    _    _    _    _    _    _    _
+       _    _    _              _              _    _    _    _
               _    _    _     _    _    _    
-  _    _    _                               _    _    _    
 )
 
 (defalias
@@ -149,52 +141,18 @@
 )
 
 (deflayer launcher
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    @lnp _    _    _
-  _    _    _    _    @lnf @lng _    _    _    _    _    _    _
-  _    _    _    _    _    @lnb @lnn _    _    _    _    _
-  _    _    _              _              _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    @lnp _    _
+  _    _    _    _    _    @lnf @lng _    _    _    _    _    _    _
+  _    _    _    _    _    _    @lnb @lnn _    _    _    _    _    _
+       _    _    _              _              _    _    _    _
               _    _    _     _    _    _    
-  _    _    _                               _    _    _    
 )
 
-;; ----- Old layers that aren't used anymore -----
-
-(deflayer layers
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    (layer-switch qwerty) (layer-switch gaming) _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
-              _    _    _     _    _    _    
-  _    _    _                               _    _    _    
-)
-(deflayer gaming
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    (tap-hold-release 500 500 \ (layer-switch qwerty))
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet cmp  rctl
-              _    _    _     _    _    _    
-  _    _    _                               _    _    _    
-)
-
-(deflayer misc
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    ins  S-[  S-]  [    ]    _    _    _
-  _    _    _    _    C-u  _    @cbs bspc esc  ret  _    _    _
-  _    C-z  C-x  C-c  C-v  _    _    del  _    _    _    _
-  _    _    _              _              _    _    _    _
-              _    _    _     _    _    _    
-  _    _    _                               _    _    _    
-)
 
 (deflayer template
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
-              _    _    _     _    _    _    
-  _    _    _                               _    _    _    
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+       _    _    _              _              _    _    _    _
+                   _    _    _     _    _    _    
 )
