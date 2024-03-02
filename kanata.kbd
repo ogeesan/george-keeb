@@ -64,9 +64,10 @@
 
 (defalias
     kpd (tap-hold-release 200 150 g (layer-while-held numpadkeypad))
+    fpd (tap-hold-release 200 150 r (layer-while-held fkeypad))
 )
 (deflayer numpad
-  _    _    _    _    _    _    _    kp/  7    8    9    kp-  _    _
+  _    _    _    _    _    @fpd _    kp/  7    8    9    kp-  _    _
   _    _    ,    .    _    bspc @kpd kp*  4    5    6    kp+  _    _
   _    _    _    _    _    _    _    0    1    2    3    ret  _    _
        _    _    _              _              _    _    _    _
@@ -77,6 +78,14 @@
   _    _    _    _    _    _    _    _    kp7  kp8  kp9  _    _    _
   _    _    _    _    _    _    _    _    kp4  kp5  kp6  _    _    _
   _    _    _    _    _    _    _    kp0  kp1  kp2  kp3  _    _    _
+       _    _    _              _              _    _    _    _
+              _    _    _     _    _    _    
+)
+
+(deflayer fkeypad
+  _    _    _    _    _    _    _    _    f7   f8   f9   f12  _    _
+  _    _    _    _    _    _    _    _    f4   f5   f6   f11  _    _
+  _    _    _    _    _    _    _    _    f1   f2   f3   f10  _    _
        _    _    _              _              _    _    _    _
               _    _    _     _    _    _    
 )
