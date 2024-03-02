@@ -76,7 +76,7 @@ The three systems I do most of my writing in are Notepad++, VS Code, and PyCharm
 | Focus editor           |        <kbd>a</kbd>       |           | Focus Active Editor Group             | Focus editor               |
 | Focus terminal         |        <kbd>s</kbd>       |           | Focus on Terminal View                | Python console             |
 | Command Palette        |        <kbd>k</kbd>       |           | Command Palette                       | Find Action                |
-| Jump                   |        <kbd>g</kbd>       |           | metaGo.goto Smart                     | Acejump Activate           |
+| Jump                   |        <kbd>g</kbd>       |           | Activate Find-Jump                    | Acejump Activate           |
 | Sidebar Toggle         |        <kbd>b</kbd>       |           | Toggle Primary Side Bar Visibility    |                            |
 | File explore           |        <kbd>q</kbd>       |           | Focus on Folders View                 | Tool Windows > Project     |
 | File switcher          |        <kbd>w</kbd>       |           | Go to File                            | View Recent Files          |
