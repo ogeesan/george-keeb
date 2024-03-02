@@ -16,7 +16,7 @@
 ;; Default layout aliases
 (defalias
 ;; 	;;spc (tap-next-release spc (layer-toggle num))
-	alt (tap-dance 250 (ralt esc))  ;; double-tap alt to esc
+	sel (tap-dance 250 ((layer-while-held layerswitch) esc))  ;; double-tap alt to esc
 	hnv (tap-hold-release 200 200 f (layer-while-held hypernav))
 	npd (tap-hold-release 200 150 d (layer-while-held numpad))
 	sym (tap-hold-release 200 150 s (layer-while-held symbols))
@@ -31,8 +31,8 @@
   tab    tab  q    w    e    r    t    y    u    i    o    p    [    _
   caps   lrld a    @sym @npd @hnv g    @ctl j    k    l    @meh '    '
   lsft   lsft z    x    c    v    b    n    @med ,    .    @lnr rsft rsft
-       lctl lmet lalt           spc            @alt rmet cmp  rctl
-                lalt lctl ret      spc  lalt lmet    
+       lctl lmet lalt           spc            ralt rmet cmp  rctl
+                lalt lctl ret      spc  @sel lmet    
 )
 
 
@@ -155,6 +155,25 @@
   _    _    _    _    _    _    @lnb @lnn _    _    _    _    _    _
        _    _    _              _              _    _    _    _
               _    _    _     _    _    _    
+)
+
+;; reference for where eacn letter falls on layout
+;;caps a    s    d    f    g    h    j    k    l    ;    '    ret
+(deflayer layerswitch
+  _    _    (layer-switch qwerty)    (layer-switch gaming)    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+       _    _    _              _              _    _    _    _
+                   _    _    _     _    _    _    
+)
+
+
+(deflayer gaming
+  tab  tab  q    w    e    r    t    y    u    i    o    p    [    _
+  caps caps a    s    d    f    g    h    j    k    l    ;    '    '
+  lsft lsft z    x    c    v    b    n    m    ,    .    /    rsft rsft
+       lctl lmet lalt           spc            ralt rmet cmp  rctl
+                lalt lctl ret      spc  @sel lmet    
 )
 
 
