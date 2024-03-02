@@ -57,7 +57,7 @@
 (deflayer hypernav
   _    _    _    _    esc  _    _    _    -    up   =    @hme @pup @pup
   _    _    lalt lsft lctl _    @go  bspc left down rght @end @pdn @pdn
-  _    _    _    @tld grv  _    _    @cbs del  tab  _    _    _    _
+  _    _    _    @tld grv  _    _    @cbs del  tab  _    @pup _    _
       _    _    _              _            _    _    _    _   
               _    _    _     _    _    _    
 )
