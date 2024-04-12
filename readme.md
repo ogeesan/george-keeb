@@ -40,7 +40,6 @@ My solution is currently to use each of the home-row keys as a layer-while-held 
 4. Symbol
 5. Number
 
-
 Each layer should also be able to do double duty as `layer-while-held`, and using some kind of `layer-switch` mechanism.
 
 ### Constraints
@@ -53,6 +52,7 @@ My right hand prefers inward rolls, while my left hand doesn't seem to mind at a
 ## Layers
 
 ### Rapid access/text manipulations
+
 This layer is the most important layer. Other layers are grouped by function, like a numbers layer or symbols layer, while this layer is simply a question of high-usage. On a normal keyboard there's a set of fast cursor manipulations that can be done if your hands are on the arrow keys and the modifiers. With only <kbd>Ctrl</kbd>, <kbd>Shift</kbd>, <kbd>Alt</kbd>, arrow keys, <kbd>End</kbd>, <kbd>Delete</kbd>, and <kbd>Backspace</kbd> there are a lot of ways you can combo those together in many different programs to manipulate tect. The rapid access layer is built for easy access to these items.
 
 The left index finger activates this layer, with the other fingers of the left hand accessing the modifier keys. The right hand has movement, like Up Arrow to Page Down, and key manipulations, like Backspace and Delete.
@@ -71,31 +71,33 @@ The three systems I do most of my writing in are Notepad++, VS Code, and PyCharm
 
 | Action                 | Key (with <kbd>meh</kbd>) | Notepad++ | VS Code                               | PyCharm                    |
 | ---------------------- |:-------------------------:| --------- | ------------------------------------- | -------------------------- |
-| Run cell               |        <kbd>f</kbd>       |           | macros.RunCellinTerminal[^1]          | Run Cell[^2]               |
-| Run selection          |        <kbd>d</kbd>       |           | Run Selection/Line in Python Terminal |                            |
-| Focus editor           |        <kbd>a</kbd>       |           | Focus Active Editor Group             | Focus editor               |
-| Focus terminal         |        <kbd>s</kbd>       |           | Focus on Terminal View                | Python console             |
-| Command Palette        |        <kbd>k</kbd>       |           | Command Palette                       | Find Action                |
-| Jump                   |        <kbd>g</kbd>       |           | Activate Find-Jump                    | Acejump Activate           |
-| Sidebar Toggle         |        <kbd>b</kbd>       |           | Toggle Primary Side Bar Visibility    |                            |
-| File explore           |        <kbd>q</kbd>       |           | Focus on Folders View                 | Tool Windows > Project     |
-| File switcher          |        <kbd>w</kbd>       |           | Go to File                            | View Recent Files          |
-| Recent locations       |        <kbd>e</kbd>       |           |                                       | Recent Locations           |
-| Symbol jumper          |        <kbd>r</kbd>       |           | Go to Symbol in Workspace             | Go to Symbol               |
-| Definition             |        <kbd>t</kbd>       |           | Go to Definition                      | Go to Declaration          |
-| Peek Definition        |        <kbd>y</kbd>       |           | Peek Definition                       | Quick Definition           |
-| File Structure         |        <kbd>u</kbd>       |           | Go to Symbol in Editor                | File Structure             |
-| Run cell and move next |        <kbd>v</kbd>       |           |                                       | Run Cell and Move Next[^2] |
+| Run cell               | <kbd>f</kbd>              |           | macros.RunCellinTerminal[^1]          | Run Cell[^2]               |
+| Run selection          | <kbd>d</kbd>              |           | Run Selection/Line in Python Terminal |                            |
+| Focus editor           | <kbd>a</kbd>              |           | Focus Active Editor Group             | Focus editor               |
+| Focus terminal         | <kbd>s</kbd>              |           | Focus on Terminal View                | Python console             |
+| Command Palette        | <kbd>k</kbd>              |           | Command Palette                       | Find Action                |
+| Jump                   | <kbd>g</kbd>              |           | Activate Find-Jump                    | Acejump Activate           |
+| Sidebar Toggle         | <kbd>b</kbd>              |           | Toggle Primary Side Bar Visibility    |                            |
+| File explore           | <kbd>q</kbd>              |           | Focus on Folders View                 | Tool Windows > Project     |
+| File switcher          | <kbd>w</kbd>              |           | Go to File                            | View Recent Files          |
+| Recent locations       | <kbd>e</kbd>              |           |                                       | Recent Locations           |
+| Symbol jumper          | <kbd>r</kbd>              |           | Go to Symbol in Workspace             | Go to Symbol               |
+| Definition             | <kbd>t</kbd>              |           | Go to Definition                      | Go to Declaration          |
+| Peek Definition        | <kbd>y</kbd>              |           | Peek Definition                       | Quick Definition           |
+| Breadcrumbs            | <kbd>i</kbd>              |           | Focus Breadcrumbs                     | Jump to Navigation Bar     |
+| File Structure         | <kbd>u</kbd>              |           | Go to Symbol in Editor                | File Structure             |
+| Run cell and move next | <kbd>v</kbd>              |           |                                       | Run Cell and Move Next[^2] |
 | Set bookmark           |                           |           |                                       |                            |
 | Next bookmark          |                           |           |                                       |                            |
 | Previous bookmark      |                           |           |                                       |                            |
-| Quick documentation    |        <kbd>h</kbd>       |           | Show hover                            | Quick Documentation        |
+| Quick documentation    | <kbd>h</kbd>              |           | Show hover                            | Quick Documentation        |
 |                        |                           |           |                                       |                            |
 
 [^1]: Macros plugin from ctf0
 [^2]: PyCharm Cell mode plugin
 
 ### Symbol and Number Layers
+
 I don't think there's much to say here, other than I take the normal keypad approach for numbers and the symbols are just squished onto a 4x3 grid.
 
 ### App Switching Layer
