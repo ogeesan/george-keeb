@@ -1,6 +1,6 @@
 # George's kanata layout
 
-I find myself typing on different keyboards at home, at work, and on my laptop. The approach of using QMK to configure keyboards individually doesn't really make sense if I want to have a similar layout when writing on the laptop or on different keyboards. Similarly, well developed layout approaches like [Miryoku](https://github.com/manna-harbour/miryoku/) are highly reliant on thumb clusters and so aren't applicable to normal keyboards (kinda[^1]). I want something that a layout that is agnostic to the physical layout of the keyboard. I also type roll too much to make use of homerow mods.
+I find myself typing on different keyboards at home, at work, and on my laptop. The approach of using QMK to configure keyboards individually doesn't really make sense if I want to have a similar layout when writing on the laptop or on different keyboards. Similarly, well developed layout approaches like [Miryoku](https://github.com/manna-harbour/miryoku/) are highly reliant on thumb clusters and so aren't applicable to normal keyboards (kinda[^1]). I want a layout that is agnostic to the physical layout of the keyboard. I also type roll too much to make use of homerow mods.
 
 [^1]: I discovered that Miryoku features the [KMonad layout](https://github.com/manna-harbour/miryoku_kmonad) which aims to support full Miryoku on standard keyboards. The home row is moved up one layer, which is pretty cool. I've put a pin in that for now, since I've been enjoying building my own layout.
 
@@ -53,25 +53,25 @@ My right hand prefers inward rolls, while my left hand doesn't seem to mind at a
 
 ### Rapid access/text manipulations
 
-This layer is the most important layer. Other layers are grouped by function, like a numbers layer or symbols layer, while this layer is simply a question of high-usage. On a normal keyboard there's a set of fast cursor manipulations that can be done if your hands are on the arrow keys and the modifiers. With only <kbd>Ctrl</kbd>, <kbd>Shift</kbd>, <kbd>Alt</kbd>, arrow keys, <kbd>End</kbd>, <kbd>Delete</kbd>, and <kbd>Backspace</kbd> there are a lot of ways you can combo those together in many different programs to manipulate tect. The rapid access layer is built for easy access to these items.
+This layer is the most important layer. Other layers are grouped by function, like a numbers layer or symbols layer, while this layer is simply a question of high-usage. On a normal keyboard there's a set of fast cursor manipulations that can be done if your hands are on the arrow keys and the modifiers. With only <kbd>Ctrl</kbd>, <kbd>Shift</kbd>, <kbd>Alt</kbd>, arrow keys, <kbd>End</kbd>, <kbd>Delete</kbd>, and <kbd>Backspace</kbd> there are a lot of ways you can combo those together in many different programs to manipulate text. The rapid access layer is built for easy access to these items.
 
 The left index finger activates this layer, with the other fingers of the left hand accessing the modifier keys. The right hand has movement, like Up Arrow to Page Down, and key manipulations, like Backspace and Delete.
 
 Since I'm not a vim user the IJKL as the arrow keys works for me.
 
-For me, this layer came about very organically. It started out with only the arrows and <kbd>Backspace</kbd>, but over time I found myself adding to it and shuffling things around for feelings that make more sense. Other layers don't have to be as optimised if they aren't accessed as much.
+For me, this layer came about very organically. It started out with only the arrows and <kbd>Backspace</kbd>, but over time I found myself adding to it and shuffling things around for feelings that make more sense. In my opinion other layers don't have to be as optimised if they aren't accessed as much.
 
 ### MEH layer/editor navigation/shortcut layer
 
 The rapid access layer is built to support operations that I do a thousand times a day, while the MEH (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>) modifier layer can support editor-specific shortcuts and operations that are used a hundred times a day.
 
-The following is a list of shortcuts that I use regularly across multiple editors, and so they should all be configured to use the same shortcuts (and therefore the same kanata MEH chord).
+The following is a list of shortcuts that I use regularly across multiple editors, and so they should all be configured to use the same shortcuts (and therefore the same kanata MEH+key).
 
 The three systems I do most of my writing in are Notepad++, VS Code, and PyCharm.
 
 | Action                 | Key (with <kbd>meh</kbd>) | Notepad++ | VS Code                               | PyCharm                    |
 | ---------------------- |:-------------------------:| --------- | ------------------------------------- | -------------------------- |
-| Run cell               | <kbd>f</kbd>              |           | macros.RunCellinTerminal[^1]          | Run Cell[^2]               |
+| Run cell               | <kbd>f</kbd>              |           | macros.RunCellinTerminal[^2]          | Run Cell[^3]               |
 | Run selection          | <kbd>d</kbd>              |           | Run Selection/Line in Python Terminal |                            |
 | Focus editor           | <kbd>a</kbd>              |           | Focus Active Editor Group             | Focus editor               |
 | Focus terminal         | <kbd>s</kbd>              |           | Focus on Terminal View                | Python console             |
@@ -93,8 +93,8 @@ The three systems I do most of my writing in are Notepad++, VS Code, and PyCharm
 | Quick documentation    | <kbd>h</kbd>              |           | Show hover                            | Quick Documentation        |
 |                        |                           |           |                                       |                            |
 
-[^1]: Macros plugin from ctf0
-[^2]: PyCharm Cell mode plugin
+[^2]: Macros plugin from ctf0
+[^3]: PyCharm Cell mode plugin
 
 ### Symbol and Number Layers
 
