@@ -29,7 +29,7 @@
 )
 (deflayer qwerty
   tab    tab  q    w    e    r    t    y    u    i    o    p    [    _
-  caps   lrld a    @sym @npd @hnv g    @ctl j    k    l    @meh '    '
+  lctl   lrld a    @sym @npd @hnv g    @ctl j    k    l    @meh '    '
   lsft   lsft z    x    c    v    b    n    @med ,    .    @lnr rsft rsft
        lctl lmet lalt           spc            ralt rmet cmp  rctl
                 lalt lctl ret      spc  @sel lmet    
