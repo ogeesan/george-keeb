@@ -21,7 +21,7 @@
 	npd (tap-hold-release 200 150 d (layer-while-held numpad))
 	sym (tap-hold-release 200 150 s (layer-while-held symbols))
 	smi (layer-while-held symbolsinvert)
-  med (tap-hold-release 200 150 m (layer-while-held media))
+	med (tap-hold-release 200 250 m (layer-while-held media))
 	meh (tap-hold-release 200 150 ; (layer-while-held mehlayer))
 	lnr (tap-hold-release 200 150 / (layer-while-held launcher))
   ctl (tap-hold-release 200 150 h lctl)
