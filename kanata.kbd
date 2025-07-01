@@ -24,12 +24,12 @@
 	med (tap-hold-release 200 250 m (layer-while-held media))
 	meh (tap-hold-release 200 150 ; (layer-while-held mehlayer))
 	lnr (tap-hold-release 200 150 / (layer-while-held launcher))
-  ctl (tap-hold-release 200 150 h lctl)
+    ctl (tap-hold-release 200 150 h lctl)
 
 )
 (deflayer qwerty
   tab    tab  q    w    e    r    t    y    u    i    o    p    [    _
-  lctl   lrld a    @sym @npd @hnv g    @ctl j    k    l    @meh '    '
+  lctl   lctl a    @sym @npd @hnv g    @ctl j    k    l    @meh '    '
   lsft   lsft z    x    c    v    b    n    @med ,    .    @lnr rsft rsft
        lctl lmet lalt           spc            ralt rmet cmp  rctl
                 lalt lctl ret      spc  @sel lmet    
@@ -53,9 +53,9 @@
     ;;lyr (layer-switch layers)
 )
 ;; reference for where eacn letter falls on layout
-;;caps a    s    d    f    g    h    j    k    l    ;    '    ret
+;;    caps  a    s    d    f    g    h    j    k    l    ;    '    ret
 (deflayer hypernav
-  _    _    _    _    esc  _    _    _    -    up   =    @hme @pup @pup
+  _    _    lrld caps esc  _    _    _    -    up   =    @hme @pup @pup
   _    _    lalt lsft lctl _    @go  bspc left down rght @end @pdn @pdn
   _    _    _    @tld grv  _    _    @cbs del  tab  _    @pup _    _
       _    _    _              (multi lsft -)            _    _    _    _   
